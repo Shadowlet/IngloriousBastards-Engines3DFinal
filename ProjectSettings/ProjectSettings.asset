@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 18
-  productGUID: 00000000000000000000000000000000
+  productGUID: 5f53a511f3660db40900a72c4d20f479
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: 
-  productName: 
+  companyName: DefaultCompany
+  productName: Balloon
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -253,7 +253,7 @@ PlayerSettings:
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
   clonedFromGUID: c0afd0d1d80e3634a9dac47e8a0426ea
-  templatePackageId: com.unity.template.3d@3.1.3
+  templatePackageId: com.unity.template.3d@3.1.4
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
