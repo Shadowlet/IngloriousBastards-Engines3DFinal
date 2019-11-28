@@ -14,7 +14,6 @@ public class BalloonSpawn : MonoBehaviour
     {
         launchTimer = 1.5f;
         balloonLifeTime = 7f;
-        LaunchBalloon();
     }
 
     // Update is called once per frame
