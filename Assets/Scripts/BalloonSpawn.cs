@@ -4,23 +4,33 @@ using UnityEngine;
 
 public class BalloonSpawn : MonoBehaviour
 {
-    private Transform balloonSpawner = null;
+    public Transform balloonSpawner;
     public GameObject balloon;
-    public float moveSpeed = 5;
 
+    [SerializeField] private float launchTimer;
+    private float balloonLifeTime;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        balloonSpawner = transform.Find("BalloonSpawnPoint");
+        launchTimer = 1.5f;
+        balloonLifeTime = 7f;
+        LaunchBalloon();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        launchTimer -= 0.01f;
+
+        if (launchTimer <= 0)
         {
-            LaunchBalloon();
+            launchTimer = 1.5f;
+            int rNumber = Random.Range(0, 2);
+            Debug.Log(rNumber);
+            if(rNumber == 0)
+            {
+                LaunchBalloon();
+            }
         }
     }
 
@@ -30,13 +40,18 @@ public class BalloonSpawn : MonoBehaviour
 
         Rigidbody rb = balloonObject.AddComponent<Rigidbody>();
 
+        int rSpeed = Random.Range(5, 12);
+
         rb.useGravity = false;
-        rb.velocity = moveSpeed * balloonSpawner.up;
+        rb.velocity = rSpeed * balloonSpawner.up;
 
-        //StartCoroutine(RemoveBalloon_RB(rb, 3.0f));
+        StartCoroutine(RemoveBalloon(balloonObject, balloonLifeTime));
+    }
 
-        new WaitForSeconds(1f);
+    IEnumerator RemoveBalloon(GameObject obj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
 
-        Destroy(balloonObject);
+        Destroy(obj);
     }
 }
