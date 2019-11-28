@@ -4,40 +4,39 @@ using UnityEngine;
 
 public class BalloonSpawn : MonoBehaviour
 {
+    private Transform balloonSpawner = null;
     public GameObject balloon;
-    public Transform spawnPoint;
-    public bool popped;
-    public float lifeTime;
-
-    public Vector3 heightLimit;
-
     public float moveSpeed = 5;
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
-        lifeTime = 3;
+        balloonSpawner = transform.Find("BalloonSpawnPoint");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        // As long as the player has not popped it, nor it is above the height limit, the balloon will continue going up
-        if(balloon.transform.position.y >= heightLimit.y)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("test");
-            SpawnBalloon();
-            Destroy(balloon);
-        }
-        else
-        {
-            balloon.transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
+            LaunchBalloon();
         }
     }
 
-    public void SpawnBalloon()
+    private void LaunchBalloon()
     {
-        Vector3 spawnLocation = spawnPoint.position;
-        Instantiate(balloon, spawnLocation, Quaternion.identity, spawnPoint);
+        GameObject balloonObject = Instantiate(balloon, balloonSpawner.position, Quaternion.identity, balloonSpawner);
+
+        Rigidbody rb = balloonObject.AddComponent<Rigidbody>();
+
+        rb.useGravity = false;
+        rb.velocity = moveSpeed * balloonSpawner.up;
+
+        //StartCoroutine(RemoveBalloon_RB(rb, 3.0f));
+
+        new WaitForSeconds(1f);
+
+        Destroy(balloonObject);
     }
 }
