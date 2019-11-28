@@ -10,26 +10,31 @@ public class BalloonSpawn : MonoBehaviour
     [SerializeField] private float launchTimer;
     private float balloonLifeTime;
 
+    private float minSpawnTimerRange = 0.12f;
+    private float maxSpawnTimerRange = 0.86f;
+    private float launchTime;
+
     private void Start()
     {
-        launchTimer = 1.5f;
+        launchTimer = Random.Range(minSpawnTimerRange, maxSpawnTimerRange);
         balloonLifeTime = 7f;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        launchTimer -= 0.01f;
+        launchTimer -= 0.001f;
 
         if (launchTimer <= 0)
         {
-            launchTimer = 1.5f;
-            int rNumber = Random.Range(0, 2);
+            launchTimer = Random.Range(minSpawnTimerRange, maxSpawnTimerRange); // 1.5f initially
+            /*int rNumber = Random.Range(0, 2);
             Debug.Log(rNumber);
-            if(rNumber == 0)
+            if (rNumber == 0)
             {
                 LaunchBalloon();
-            }
+            }*/
+            LaunchBalloon();
         }
     }
 
@@ -39,7 +44,7 @@ public class BalloonSpawn : MonoBehaviour
 
         Rigidbody rb = balloonObject.AddComponent<Rigidbody>();
 
-        int rSpeed = Random.Range(5, 12);
+        int rSpeed = 6;//Random.Range(5, 12);
 
         rb.useGravity = false;
         rb.velocity = rSpeed * balloonSpawner.up;
