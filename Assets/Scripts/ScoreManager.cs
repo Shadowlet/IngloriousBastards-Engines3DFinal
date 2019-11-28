@@ -12,27 +12,42 @@ public class ScoreManager : MonoBehaviour
 
     public int balloonCount;
     public int comboCount;
+    public int highestCombo;
 
     public float timeSurvived;
 
     private int highScore;
+    private int totalScore;
     private int balloonScore;
     private int comboScore;
     private int timeScore;
-    private int highestCombo;
+
+    private float balloonScoreMultiplier = 3.5f;
+    private float timeScoreMultiplier = 1.2f;
+    private float comboScoreMultiplier = 10.0f;
+
+
+    private void Start()
+    {
+        CalculateScore();
+    }
 
     public void CalculateScore()
     {
-        balloonScore = balloonCount * 3;
-        BalloonText.text = ToString(balloonScore);
-        TimeText.text = ToString(comboScore);
-        ComboText.text = ToString(timeScore);
-        high
+        balloonScore = (int)(balloonCount * balloonScoreMultiplier);
+        timeScore = (int)(timeSurvived * timeScoreMultiplier);
+        comboScore = (int)(comboCount * comboScoreMultiplier);
+        totalScore = balloonScore + timeScore + comboScore;
+
+        BalloonText.text = "Balloons Hit: " + balloonCount + " x " + balloonScoreMultiplier + " = " + balloonScore.ToString();
+        TimeText.text = "Time Survived: " + timeSurvived + " x " + timeScoreMultiplier + " = " + timeScore.ToString();
+        ComboText.text = "Highest Combo: " + comboCount + " x " + comboScoreMultiplier + " = " + comboScore.ToString();
+        TotalScoreText.text = "TOTAL SCORE: " + totalScore.ToString();
 
     }
 
     public void SaveHighScore()
     {
-
+        totalScore = highScore;
     }
 }
