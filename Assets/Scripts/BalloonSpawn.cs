@@ -40,6 +40,7 @@ public class BalloonSpawn : MonoBehaviour
         GameObject balloonObject = Instantiate(balloon, balloonSpawner.position, Quaternion.identity, balloonSpawner);
         Rigidbody rb = balloonObject.AddComponent<Rigidbody>();
 
+        int Speed = 7;  //Set speed, for development purposes
         // Define an initial speed from 5 to 11
         int rSpeed = Random.Range(5, 12);
         rb.useGravity = false;
