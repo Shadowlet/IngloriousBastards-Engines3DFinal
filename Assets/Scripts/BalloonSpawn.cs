@@ -26,7 +26,7 @@ public class BalloonSpawn : MonoBehaviour
             launchTimer = 1.5f;
 
             // Set a random number from 0 to 1, if its 0 then launch balloon, otherwise do nothing
-            int rNumber = Random.Range(0, 2);
+            int rNumber = Random.Range(0, 5);
             if(rNumber == 0)
             {
                 LaunchBalloon();
