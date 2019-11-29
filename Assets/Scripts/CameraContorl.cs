@@ -23,7 +23,7 @@ public class CameraContorl : MonoBehaviour
     public LayerMask collisionLayers = 1;
     public bool alwaysRotateToRearOfTarget = false;
     public bool allowMouseInputX = true;
-    public bool allowMouseInputy = true;
+    public bool allowMouseInputY = true;
 
     private float xDeg = 0.0f;
     private float yDeg = 0.0f;
@@ -53,10 +53,56 @@ public class CameraContorl : MonoBehaviour
     // camera is moving after everything is  else has been updated
     void LateUpdate()
     {
-        if (allowMouseInputX)
+        if (Input.GetButton("Toggle Move"))
         {
-            // GetButton("Toggle Move");
             mouseSideButton = !mouseSideButton;
         }
+        if (mouseSideButton && (Input.Axis("Vertical")!= 0 || Input.GetButton("Jump")) || (allowMouseInputX.GetMouseButton(0) && allowMouseInputX.GetMouseButton(1)))
+        {
+            mouseSideButton = false;
+        }
+        if (GUIUtility.hotControl == 0)
+        {
+            (Input.GetMouseButton(0) || allowMouseInputX.GetMouseButton(1))
+            {
+                if (allowMouseInputX) 
+                {
+                    xDeg += Input.GetAxis ("Mouse X") * xSpeed * 0.02f;
+                }
+                else
+                {
+                    rotateBehindTarget();
+                }
+            } 
+
+        if (allowMouseInputY)
+        {
+            yDeg -= Input.GetAxis ("Mouse Y") * ySpeed * 0.02f;
+        }
+        if (!alwaysRotateToRearOfTarget)
+        {
+            rotateBehind = false;
+        }
+            
+            else if(Input.GetAxis("Verticcal") ! = 0 || allowMouseInputX.GetAxis("Horizontal") != 0 || rotateBehind || mouseSideButton)
+                {
+                    rotateBehindTarget();
+                }
+        
+        }
+
+        yDeg = ClampAngle (yDeg, yMinLimit, yMaxLimit);
+
+        Quaternion rotation = Quaternion.Euler (yDeg, xDeg, 0);
+
+        desiredDistance -=Input.GetAxis("Mouse ScrollWheel")*Time.deltaTime*zoomSpeed*Mathf.Abs(desiredDistance);
+
+        desiredDistance = Mathf.Clamp(desiredDistance, minDistance, maxDistance);
+        correctedDistance = desiredDistance;
+
+        Vector3 vTargetOffset = new Vector3 (0, -heightOffset, 0);
+              
+
     }
+
 }

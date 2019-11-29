@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     public bool isDashing;
     public bool canDash;
-
+    public Vector3 Movement;
 
     void Start()
     {
@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        Movement = Rb.velocity;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isGrounded)
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     void DoMovement()
     {
+
         if (Input.GetKey(KeyCode.W))
         {
             Rb.AddForce(Vector3.forward * moveForce);
@@ -76,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             if (Rb.velocity.x > (Vector3.right.x * moveForce))
             {
                 Rb.velocity = new Vector3((Vector3.right.x * moveForce), Rb.velocity.y, Rb.velocity.z);
-                // new Vector3(x, y, z);
+            
             }
 
         }
