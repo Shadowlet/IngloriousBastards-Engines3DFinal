@@ -615,12 +615,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb: {fileID: 1612331494}
-  Player: {fileID: 1612331492}
-  horizonatal: 0
-  vertical: 0
   moveForce: 10
+  dashForce: 0
   jumpForce: 150
   isGrounded: 0
+  isDashing: 0
+  canDash: 0
 --- !u!54 &1612331494
 Rigidbody:
   m_ObjectHideFlags: 0

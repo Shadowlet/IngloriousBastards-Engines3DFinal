@@ -12,7 +12,6 @@ public class BalloonSpawn : MonoBehaviour
 
     private float minSpawnTimerRange = 1.3f;
     private float maxSpawnTimerRange = 2.8f;
-    private float launchTime;
 
     private void Start()
     {

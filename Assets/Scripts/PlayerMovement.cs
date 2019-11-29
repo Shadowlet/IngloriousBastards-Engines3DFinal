@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isDashing;
     public bool canDash;
 
+    public ScoreManager scores;
 
     void Start()
     {
@@ -157,8 +158,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
             // canDash = true;
+            scores.balloonCount++;
+            //Debug.Log(scores.balloonCount);
         }
-
     }
 
 
