@@ -12,7 +12,6 @@ public class BalloonSpawn : MonoBehaviour
 
     private float minSpawnTimerRange = 0.12f;
     private float maxSpawnTimerRange = 0.86f;
-    private float launchTime;
 
     private void Start()
     {
@@ -44,7 +43,7 @@ public class BalloonSpawn : MonoBehaviour
 
         Rigidbody rb = balloonObject.AddComponent<Rigidbody>();
 
-        int rSpeed = 6;//Random.Range(5, 12);
+        int rSpeed = 6; //Random.Range(5, 12);
 
         rb.useGravity = false;
         rb.velocity = rSpeed * balloonSpawner.up;
