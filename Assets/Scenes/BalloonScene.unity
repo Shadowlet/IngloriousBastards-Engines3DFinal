@@ -3825,13 +3825,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971058109}
-<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5, y: 5.8999996, z: -12.19}
-=======
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.5, z: -22.76}
->>>>>>> a63bb7db9df92ca19c061ca05f8174f9a89ce20e
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4330,15 +4325,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015684952}
-<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.6, y: 0, z: -5.7}
   m_LocalScale: {x: 2, y: 2, z: 2}
-=======
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.57, y: 5.21, z: -11.21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
->>>>>>> a63bb7db9df92ca19c061ca05f8174f9a89ce20e
   m_Children:
   - {fileID: 215912887}
   - {fileID: 1902873993}
@@ -5010,13 +4999,10 @@ GameObject:
   - component: {fileID: 1093297216}
   - component: {fileID: 1093297215}
   m_Layer: 0
-<<<<<<< HEAD
   m_Name: Floor
   m_TagString: SpikeFloor
-=======
   m_Name: LavaFloor
   m_TagString: Untagged
->>>>>>> a63bb7db9df92ca19c061ca05f8174f9a89ce20e
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5051,11 +5037,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-<<<<<<< HEAD
   - {fileID: 2100000, guid: 62edec2c5e85c1f4dbd67b1d97926a41, type: 2}
-=======
   - {fileID: 2100000, guid: f9ce4b5b272e62e47b0c83a957786c1a, type: 2}
->>>>>>> a63bb7db9df92ca19c061ca05f8174f9a89ce20e
+  - {fileID: 2100000, guid: f9ce4b5b272e62e47b0c83a957786c1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5092,19 +5076,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093297214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 1956315638}
   m_RootOrder: 0
-=======
   m_LocalPosition: {x: 0, y: 0.16, z: 0}
   m_LocalScale: {x: 24.22616, y: 0.5369836, z: 21.002123}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
->>>>>>> a63bb7db9df92ca19c061ca05f8174f9a89ce20e
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1151463394
 GameObject:

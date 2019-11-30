@@ -10,5 +10,13 @@ EditorBuildSettings:
     guid: 5ebd69609af09f54a94042bd7642ffc6
   - enabled: 1
     path: Assets/Scenes/BalloonScene.unity
-    guid: 4d58e97244c03a44393d8fb98df74431
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MasterScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
