@@ -10,7 +10,7 @@ public class BalloonSpawn : MonoBehaviour
     [SerializeField] private float launchTimer;
     private float balloonLifeTime;
 
-    private float minSpawnTimerRange = 1f;
+    private float minSpawnTimerRange = 1.3f;
     private float maxSpawnTimerRange = 2.8f;
     private float launchTime;
 
@@ -24,10 +24,9 @@ public class BalloonSpawn : MonoBehaviour
     void FixedUpdate()
     {
         launchTimer -= 0.01f;
-
         if (launchTimer <= 0)
         {
-            int rNumber = Random.Range(0, 4);
+            int rNumber = Random.Range(0, 5);
 
             if(rNumber == 0)
             {
@@ -43,8 +42,8 @@ public class BalloonSpawn : MonoBehaviour
         Rigidbody rb = balloonObject.AddComponent<Rigidbody>();
 
         int Speed = 7;  //Set speed, for development purposes
-        // Define an initial speed from 5 to 11
-        int rSpeed = Random.Range(5, 12);
+        // Define an initial speed from 4 to 9
+        int rSpeed = Random.Range(4, 10);
 
         rb.useGravity = false;
         rb.velocity = rSpeed * balloonSpawner.up;

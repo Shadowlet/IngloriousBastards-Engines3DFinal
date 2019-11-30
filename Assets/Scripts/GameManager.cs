@@ -9,6 +9,9 @@ public delegate void OnStateChange();
 
 public class GameManager : MonoBehaviour
 {
+    public ScoreManager scoreManager;
+    public AbilityUI abilityUI;
+
     protected GameManager() { }
     private static GameManager gameInstance = null;
     public event OnStateChange OnStateChange;
@@ -43,17 +46,26 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SetGameState(GameState.GAME);
+
         SceneManager.LoadScene(1);
+        Cursor.visible = false;
+        abilityUI.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
     }
 
     public void PlayerDeath()
     {
         SetGameState(GameState.DEATH);
+        Cursor.visible = true;
+        scoreManager.CalculateScore();
+        scoreManager.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
+        abilityUI.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
     }
 
     public void GoToMenu()
     {
         SetGameState(GameState.MENU);
+
+        SceneManager.LoadScene(0);
     }
 
 

@@ -27,6 +27,12 @@ public class ScoreManager : MonoBehaviour
     private float comboScoreMultiplier = 10.0f;
 
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+    }
+
     private void Start()
     {
         CalculateScore();
